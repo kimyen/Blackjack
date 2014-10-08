@@ -5,12 +5,8 @@ import java.awt.event.MouseListener;
 import java.io.File;
 import java.io.FileNotFoundException;
 
-
-
-import javax.swing.ImageIcon;
 import javax.swing.JFileChooser;
 import javax.swing.JOptionPane;
-
 
 public class Controller {
 	
@@ -51,7 +47,6 @@ public class Controller {
 					}
 					
 				} catch (FileNotFoundException e) {
-					// TODO Auto-generated catch block
 					e.printStackTrace();
 				}
 			}
@@ -132,7 +127,6 @@ public class Controller {
 	}
 	
 	private int newGame(int balance) {
-		// TODO Auto-generated method stub
 
 		int bet=bj.newGame();
 		if (!bj.available()){
@@ -171,12 +165,10 @@ public class Controller {
 		}
 
 		private boolean checkName(String link) {
-			// TODO Auto-generated method stub
 			String str=link.substring(link.length()-4,link.length());
 			if (str.equals(".csv")) {
 				return true;
 			}
-			//link="";
 			return false;
 		}
 	}
@@ -375,7 +367,6 @@ public class Controller {
 		
 		@Override
 		public void mouseClicked(MouseEvent arg0) {
-			// TODO Auto-generated method stub
 			gui.initialDisableLabels();
 			gui.resetCards();
 			gui.disableButton("Repeat Bet");
@@ -395,25 +386,21 @@ public class Controller {
 
 		@Override
 		public void mouseEntered(MouseEvent arg0) {
-			// TODO Auto-generated method stub
 			
 		}
 
 		@Override
 		public void mouseExited(MouseEvent arg0) {
-			// TODO Auto-generated method stub
 			
 		}
 
 		@Override
 		public void mousePressed(MouseEvent arg0) {
-			// TODO Auto-generated method stub
 			
 		}
 
 		@Override
 		public void mouseReleased(MouseEvent arg0) {
-			// TODO Auto-generated method stub
 			
 		}
 		
@@ -444,7 +431,6 @@ public class Controller {
 	}
 	
 	private void initialAssignAction() {
-		// TODO Auto-generated method stub
 		gui.assignAction("Load Deck", new LoadDeck());
 		gui.assignAction("Rules", new Rules());
 		gui.assignAction("H17", new H17());
@@ -480,6 +466,7 @@ public class Controller {
 	}
 
 	public static void main(String[] agrs){
-		Controller c=new Controller();
+		@SuppressWarnings("unused")
+		Controller controller=new Controller();
 	}
 }

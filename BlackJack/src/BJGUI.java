@@ -123,14 +123,12 @@ public class BJGUI {
 	}
 	
 	private void createMenuItemsMap() {
-		// TODO Auto-generated method stub
 		menuItems.put("Schedule", this.dealersSchedule);
 		menuItems.put("Vin", this.Vin);
 		menuItems.put("KimYen", this.KimYen);
 	}
 
 	public void initialDisableLabels() {
-		// TODO Auto-generated method stub
 		blackJack.setVisible(false);
 		bust.setVisible(false);
 		YouLose.setVisible(false);
@@ -155,7 +153,6 @@ public class BJGUI {
 	}
 
 	private void createLabelsMap() {
-		// TODO Auto-generated method stub
 		labels.put("BlackJack", blackJack);
 		labels.put("Bust", bust);
 		labels.put("You Lose", YouLose);
@@ -210,7 +207,6 @@ public class BJGUI {
 	}
 
 	private void setChips() {
-		// TODO Auto-generated method stub
 		n1=createChips("1");
 		n5=createChips("5");
 		n25=createChips("25");
@@ -388,11 +384,11 @@ public class BJGUI {
 		this.bet.setText("$ "+bet);
 	}
 	public static void main(String[] args){
+		@SuppressWarnings("unused")
 		BJGUI gui=new BJGUI();
 	}
 
 	public void disableButton(String button) {
-		// TODO Auto-generated method stub
 		if (buttons.containsKey(button)){
 			buttons.get(button).setEnabled(false);
 		}
@@ -401,7 +397,6 @@ public class BJGUI {
 	}
 	
 	public void enableButton(String button) {
-		// TODO Auto-generated method stub
 		if (buttons.containsKey(button)){
 			buttons.get(button).setEnabled(true);
 		}
@@ -410,7 +405,6 @@ public class BJGUI {
 	}
 	
 	public void disableChip(int label){
-		// TODO Auto-generated method stub
 		if (chips.containsKey(label)){
 			chips.get(label).setVisible(false);
 		}
@@ -418,7 +412,6 @@ public class BJGUI {
 	}
 	
 	public void enableChip(int label) {
-		// TODO Auto-generated method stub
 		if (chips.containsKey(label)){
 			chips.get(label).setVisible(true);
 		}
@@ -438,7 +431,6 @@ public class BJGUI {
 	}
 
 	public void assignLabelsAction(int label, MouseListener listener) {
-		// TODO Auto-generated method stub
 		if (chips.containsKey(label)){
 			chips.get(label).addMouseListener(listener);	
 		}
@@ -446,7 +438,6 @@ public class BJGUI {
 	}
 
 	public void updateChips(int balance, int bet) {
-		// TODO Auto-generated method stub
 		Set<Integer> chip=chips.keySet();
 		for(int i: chip){
 			if (((i>0)&&(i>=balance))||((i<0)&&(Math.abs(i)>=bet))){
@@ -460,7 +451,6 @@ public class BJGUI {
 	}
 
 	public void updateDeal(int bet) {
-		// TODO Auto-generated method stub
 		if (bet>0){
 			this.enableButton("Deal Button");
 		}
@@ -470,7 +460,6 @@ public class BJGUI {
 	}
 
 	public void updatePlayersHand(ArrayList<String> playersHand) {
-		// TODO Auto-generated method stub
 		int i=0;
 		for (String s:playersHand){
 			this.playerCards.get(i).setIcon(createCards(s));
@@ -479,13 +468,11 @@ public class BJGUI {
 	}
 	
 	public void initialDealersHand(ArrayList<String> dealersHand) {
-		// TODO Auto-generated method stub
 		this.dealerCards.get(0).setIcon(new ImageIcon(getClass().getResource("cards/b1fv.gif")));
 		this.dealerCards.get(1).setIcon(createCards(dealersHand.get(1)));		
 	}
 	
 	public void updateDealersHand(ArrayList<String> dealersHand) {
-		// TODO Auto-generated method stub
 		int i=0;
 		for (String s:dealersHand){
 			this.dealerCards.get(i).setIcon(createCards(s));
@@ -494,7 +481,6 @@ public class BJGUI {
 	}
 
 	public void gameOver() {
-		// TODO Auto-generated method stub
 		initialDisableLabels();
 		initialDisable();
 		this.disableChip(1);
@@ -508,7 +494,6 @@ public class BJGUI {
 	}
 
 	public void clearSelection() {
-		// TODO Auto-generated method stub
 		recordDecision.clearSelection();
 	}
 }
